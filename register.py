@@ -1,4 +1,3 @@
-# register.py
 import cv2
 from facerec import detect_faces
 

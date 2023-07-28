@@ -7,10 +7,14 @@ import threading
 import shutil
 from facerec import *
 from register import *
+
 from dbHandler import *
 
 active_page = 0
 thread_event = None
+
+
+
 left_frame = None
 right_frame = None
 heading = None
@@ -25,7 +29,6 @@ current_slide = -1
 root = tk.Tk()
 root.geometry("1500x900+200+100")
 
-# create Pages
 pages = []
 for i in range(4):
     pages.append(tk.Frame(root, bg="#202d42"))
@@ -471,7 +474,7 @@ def getPage3():
     pages[3].lift()
 
     basicPageSetup(3)
-    heading.configure(text="Video Surveillance")
+    # heading.configure(text="Video Surveillance")
     right_frame.configure(text="Detected Criminals")
     left_frame.configure(pady=40)
 
@@ -494,8 +497,9 @@ btn_frame = tk.Frame(pages[0], bg="#202d42", pady=30)
 btn_frame.pack()
 
 tk.Button(btn_frame, text="Register Criminal", command=getPage1)
-tk.Button(btn_frame, text="Detect Criminal", command=getPage2)
-tk.Button(btn_frame, text="Video Surveillance", command=getPage3)
+#tk.Button(btn_frame, text="Detect Criminal", command=getPage2)
+
+#tk.Button(btn_frame, text="Video Surveillance", command=getPage3)
 
 for btn in btn_frame.winfo_children():
     btn.configure(font="Arial 20", width=17, bg="#2196f3", fg="white",
